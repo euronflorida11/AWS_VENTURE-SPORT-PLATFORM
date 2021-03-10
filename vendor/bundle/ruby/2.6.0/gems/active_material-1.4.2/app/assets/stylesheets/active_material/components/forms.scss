@@ -1,0 +1,92 @@
+/**
+ * Forms
+ */
+
+fieldset.inputs {
+  margin-bottom: am-unit(2);
+
+  > ol {
+    @include am-list-blank;
+  }
+
+  > legend {
+    @include am-subheader;
+    border: 0;
+  }
+}
+
+.input {
+  @include am-textfield;
+
+  > label,
+  .label > label {
+    @include am-textfield-label;
+  }
+
+  &.string input,
+  &.stringish input,
+  &.numberic input {
+    @include am-textfield-input;
+  }
+
+  &.email input {
+    @include am-textfield-input-email;
+  }
+
+  &.password input {
+    @include am-textfield-input-password;
+  }
+
+  &.datepicker input {
+    @include am-textfield-input-date;
+  }
+
+  &.text textarea {
+    @include am-textfield-input;
+    @include am-textfield-textarea;
+  }
+
+  select + input {
+    margin-top: am-unit(2);
+  }
+
+}
+
+.field_with_errors input {
+  @include am-textfield-input-error;
+}
+
+.inline-hints {
+  @include am-textfield-hint;
+}
+
+.inline-errors {
+  @include am-textfield-hint;
+  @include am-textfield-hint-error;
+
+  + .inline-hints {
+    display: none;
+  }
+}
+
+abbr[title="required"] {
+  @include am-textfield-required;
+}
+
+fieldset.actions,
+.buttons {
+  @include am-actions-footer;
+
+  > ol {
+    @include am-list-blank;
+    @include am-list-inline;
+  }
+
+  .cancel a {
+    @include am-btn-raised;
+  }
+
+  .cancel a {
+    @include am-btn;
+  }
+}
